@@ -25,6 +25,7 @@ def run():
             return True
         else:
             for msg in inport:
+                print(msg)
                 keymapping(msg)
 
 
