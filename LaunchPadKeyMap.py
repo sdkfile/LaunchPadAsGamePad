@@ -3,7 +3,7 @@ import mido.backends.rtmidi
 import keyboard
 import sys
 
-import launchpadMidiMap
+from launchpadMidiMap import launchpadMidiMap
 
 
 def keymapping(msg):
