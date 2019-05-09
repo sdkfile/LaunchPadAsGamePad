@@ -1,4 +1,5 @@
 import mido
+import launchpadMidiMap
 from pynput.mouse import Button, Controller
 
 mouse = Controller()
@@ -23,6 +24,17 @@ def mousemapping(msg, direction):
     elif msg.hex() == '90 77 00':
         direction[0] = 0
     return direction
+
+
+def miditovector(msg):
+    x, y, onoff = launchpadMidiMap(msg)
+    if onoff:
+        logic = 1
+    else:
+        logic = 0
+    vector_x = (x - 3.5) * logic
+    vector_y = (y - 3.5) * logic
+    return (vector_x, vector_y)
 
 
 def run():
